@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: 'Nunito',sans-serif;
+    background-color: var(--accent);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 32px;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+:root{
+    --accent:#EA5959;
+    --default:rgb(0, 0, 0, 0.3);
+}
+
+.todo{
+    padding: 32px;
+    background-color: #fff;
+    width: 90vh;
+    border-radius: 16px;
+}
+
+.todo__content {
+}
+.todo__titlte {
+}
+.todo__new {
+    display: flex;
+    margin: 16px 0 32px;
+    --size: 50px;
+}
+
+.todo__new input {
+    margin-right: 16px;
+    font-weight: 300;
+    padding: 8px 16px;
+    height: var(--size);
+    border: 1px solid var(--default);
+    border-radius: 5px;
+    flex-grow: 1;
+}
+.todo__add  {
+    cursor: pointer;
+    text-align: center;
+    width: var(--size);
+    height: var(--size);
+    line-height: calc (var(--size)*0.95);
+    font-size: 32px;
+    font-weight: 200;
+    border-radius: var(--size);
+    background: var(--accent);
+    color: #fff;
+}
+
+.todo__list >*:not(:last-child){
+    margin-bottom: 8px;
+}
+.todo__task {
+    cursor: default;
+    --size:30px;
+    display: flex;
+    align-items: center;
+    min-height: var(--size);
+    
+}
+
+
+
+.todo__task:hover .todo__task-del {
+    display: block;
+}
+
+.todo__task_complete .todo__task-text{
+    text-decoration: line-through;
+    color: var(--default);
+}
+.todo__checkbox {
+    margin-right: 16px;
+}
+
+.todo__checkbox div {
+    cursor: pointer;
+    --size:28px;
+    width: var(--size);
+    height: var(--size);
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    position: relative;
+    color: #fff;
+}
+
+.todo__checkbox div::after{
+    content: '\2714';
+    text-align: center;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+.todo__task-text {
+    font-size: 20px;
+}
+
+.todo__checkbox input{
+    display: none;
+}
+
+.todo__checkbox input:checked+div{
+    background-color: #EA5959;
+}
+
+.todo__checkbox input:checked+div::after{
+   display: block;
+}
+
+.todo__task-del {
+    display: none;
+    cursor: pointer;
+    text-align: center;
+    width: var(--size);
+    height: var(--size);
+    font-size: 20px;
+    font-weight: 200;
+    border-radius: var(--size);
+    background: var(--accent);
+    color: #fff;
+    margin-left: auto;
+    margin-right: 0;
+}
